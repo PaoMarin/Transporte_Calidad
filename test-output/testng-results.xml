@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="7" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="188" started-at="2020-03-11T06:20:15Z" finished-at="2020-03-11T06:20:16Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="188" started-at="2020-03-11T06:20:15Z" finished-at="2020-03-11T06:20:16Z">
+      <class name="tests.pruebasRecorridos">
+        <test-method status="PASS" signature="filtrarRecorridoCodigo()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="filtrarRecorridoCodigo" duration-ms="101" started-at="2020-03-11T06:20:15Z" finished-at="2020-03-11T06:20:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- filtrarRecorridoCodigo -->
+        <test-method status="FAIL" signature="guardaRecorrido()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="guardaRecorrido" duration-ms="12" started-at="2020-03-11T06:20:15Z" finished-at="2020-03-11T06:20:16Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:568)
+at org.testng.Assert.assertEquals(Assert.java:578)
+at tests.pruebasRecorridos.guardaRecorrido(pruebasRecorridos.java:43)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- guardaRecorrido -->
+        <test-method status="PASS" signature="modificarRecorrido()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="modificarRecorrido" duration-ms="23" started-at="2020-03-11T06:20:16Z" finished-at="2020-03-11T06:20:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- modificarRecorrido -->
+        <test-method status="PASS" signature="noGuardaRecorridoCamposEnBlanco()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="noGuardaRecorridoCamposEnBlanco" duration-ms="3" started-at="2020-03-11T06:20:16Z" finished-at="2020-03-11T06:20:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- noGuardaRecorridoCamposEnBlanco -->
+        <test-method status="PASS" signature="noModificaCodigoRecorrido()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="noModificaCodigoRecorrido" duration-ms="4" started-at="2020-03-11T06:20:16Z" finished-at="2020-03-11T06:20:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- noModificaCodigoRecorrido -->
+        <test-method status="PASS" signature="verificarElimine()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="verificarElimine" duration-ms="3" started-at="2020-03-11T06:20:16Z" finished-at="2020-03-11T06:20:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verificarElimine -->
+        <test-method status="PASS" signature="verificarNoElimineSinCodigo()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="verificarNoElimineSinCodigo" duration-ms="3" started-at="2020-03-11T06:20:16Z" finished-at="2020-03-11T06:20:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verificarNoElimineSinCodigo -->
+      </class> <!-- tests.pruebasRecorridos -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

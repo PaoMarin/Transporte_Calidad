@@ -1,50 +1,52 @@
 package logica;
-import java.util.*;
 import java.sql.Time;
+import java.util.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class RecorridoE {
-	
+		
 	private int id;
 	private String codigo;
 	private String numeroBus;
 	private String descripcionRecorrido;
 	private Time tiempoDemora;
 	private String zona_recorrido;
-	private String cantidad_recorrido;
+	private int cantidad_recorrido;
 	private boolean estado;
-
-	
 	
 	public RecorridoE() {
 	    this.codigo = "No existe o se encuentra deshabilitado";
 		this.numeroBus = "";
 		this.descripcionRecorrido = "";
-		this.tiempoDedmora = Time.valueOf(LocalTime.parse("00:00:00", DateTimeFormatter.ofPattern("HH:mm:ss")));
-		this.zonaRecorrido = "";
-		this.cantidadRecorrido = "";
+		this.tiempoDemora = Time.valueOf(LocalTime.parse("00:00:00", DateTimeFormatter.ofPattern("HH:mm:ss")));
+		this.zona_recorrido = "";
+		this.cantidad_recorrido = 0;
 		this.estado = false;
 	}
 	
 	public RecorridoE(String pCodigo, String pNumeroBus, String pDescripcionRecorrido, String pTiempoDemora,
-			String pZonaRecorrido, String pCantidadRecorrido, boolean pEstado) {
+			String pZonaRecorrido, int pCantidadRecorrido, boolean pEstado) {
 		this.codigo = pCodigo;
 		this.numeroBus = pNumeroBus;
 		this.descripcionRecorrido = pDescripcionRecorrido;
 		this.tiempoDemora = Time.valueOf(LocalTime.parse(pTiempoDemora, DateTimeFormatter.ofPattern("HH:mm:ss")));
-		this.zonaRecorrido = pZonaRecorrido;
-		this.cantidadRecorrido = pCantidadRecorrido;
+		this.zona_recorrido = pZonaRecorrido;
+		this.cantidad_recorrido = pCantidadRecorrido;
 		this.estado = pEstado;	
 	}
 	
 	public RecorridoE(int pId, String pCodigo, String pNumeroBus, String pDescripcionRecorrido, String pTiempoDemora,
-			String pZaonaRecorrido, String pCantidadRecorrido, boolean pEstado) {
+			String pZonaRecorrido, int pCantidadRecorrido, boolean pEstado) {
 		this.id = pId;
 		this.codigo = pCodigo;
 		this.numeroBus = pNumeroBus;
 		this.descripcionRecorrido = pDescripcionRecorrido;
 		this.tiempoDemora = Time.valueOf(LocalTime.parse(pTiempoDemora, DateTimeFormatter.ofPattern("HH:mm:ss")));
-		this.zonaRecorrido = pZonaRecorrido;
-		this.cantidadRecorrido = pCantidadRecorrido;
+		this.zona_recorrido = pZonaRecorrido;
+		this.cantidad_recorrido = pCantidadRecorrido;
 		this.estado = pEstado;	
 	}
 	
@@ -77,18 +79,18 @@ public class RecorridoE {
 	}
 	
 	public void setZonaRecorrido(String pZonaRecorrido) {
-		this.zonaRecorrido = pZonaRecorrido;
+		this.zona_recorrido = pZonaRecorrido;
 	}
 	
 	public String getZonaRecorrido() {
-		return this.zonaRecorrido;
+		return this.zona_recorrido;
 	}
 	
-	public void setCantidadRecorrido(String pCantidadRecorrido) {
-		this.cantidadRecorrido = pCantidadRecorrido;
+	public void setCantidadRecorrido(int pCantidadRecorrido) {
+		this.cantidad_recorrido = pCantidadRecorrido;
 	}
-	public String getCantidadRecorrido() {
-		return this.cantidadRecorrido;
+	public int getCantidadRecorrido() {
+		return this.cantidad_recorrido;
 	}
 
 	
@@ -104,17 +106,18 @@ public class RecorridoE {
 		String datosTexto = "";
 		
 		datosTexto += "\n" +
-				"Cï¿½digo: " + this.codigo + "\n" +
-				"Nï¿½mero Bus: " + this.numeroBus + "\n" +
-				"Descripciï¿½n Recorrido: " + this.descripcionRecorrido + "\n" +
+				"Código: " + this.codigo + "\n" +
+				"Número Bus: " + this.numeroBus + "\n" +
+				"Descripción Recorrido: " + this.descripcionRecorrido + "\n" +
 				"Tiempo Demora: " + this.tiempoDemora + "\n" +
-				"Zona Recorrido: " + this.zonaRecorrido + "\n" +
-				"Cantidad Recorrido: " + this.cantidadRecorrido + "\n" +
+				"Zona Recorrido: " + this.zona_recorrido + "\n" +
+				"Cantidad Recorrido: " + this.cantidad_recorrido + "\n" +
 				"Estado: " + this.estado 
 				+ "\n\n";
 		
 		return datosTexto;
 	}
 	
+	
 
-}// class RecorridoE
+}
