@@ -14,7 +14,7 @@ public class Main {
 		SocioE oSocioE = new SocioE("S3", "Armandi", "Rojas Lara", "Thomas", "T2", 45, "Luis", "Ricardo", true);
 		System.out.print(oSocioE.toString());
 		SocioD oSocioD = new SocioD();
-		//oSocioD.agregarSocio(oSocioE);
+		oSocioD.agregarSocio(oSocioE);
 		
 		/*HorarioE(String pCodigo, String pNumeroBus, String pDescripcionHorario, String pTiempoSalida,
 				String pTiempoLlegada, boolean pEstado)*/
@@ -22,7 +22,7 @@ public class Main {
 		HorarioE oHorarioEAgregar = new HorarioE("H5", "T1", "Horario 5", "06:30:00", "07:45:00", true);
 		System.out.print(oHorarioEAgregar.toString());
 		HorarioD oHorarioDAgregar = new HorarioD();
-		//oHorarioDAgregar.agregarHorario(oHorarioEAgregar);
+		oHorarioDAgregar.agregarHorario(oHorarioEAgregar);
 		
 		//BUSCAR HORARIO POR CODIGO
 		HorarioE oHorarioEBusqueda = new HorarioE();
@@ -31,11 +31,11 @@ public class Main {
 		System.out.print(oHorarioEBusqueda.toString());
 		
 		//ELIMINAR HORARIO (DESACTIVAR)
-		/*HorarioD oHorarioDEliminar = new HorarioD();
+		HorarioD oHorarioDEliminar = new HorarioD();
 		oHorarioDEliminar.eliminarHorario("H1");
 		HorarioE oHorarioEliminado = new HorarioE();
 		oHorarioEliminado = oHorarioDEliminar.buscarHorario("H1");
-		System.out.print(oHorarioEliminado.toString());*/
+		System.out.print(oHorarioEliminado.toString());
 		
 		//MODIFICAR HORARIO
 		HorarioE oHorarioEModificar = new HorarioE();
@@ -49,7 +49,7 @@ public class Main {
 		oHorarioEModificar.setTiempoLlegada("05:40:00");
 		oHorarioEModificar.setEstado(true);
 		//Se envia a modificar sus datos
-		oHorarioDModificar.modificarHorario(oHorarioEModificar);
+		//oHorarioDModificar.modificarHorario(oHorarioEModificar);
 		oHorarioEModificar = oHorarioDModificar.busquedaParaModificar("H1");
 		System.out.print(oHorarioEModificar.toString());
 

@@ -1,52 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="7" passed="6">
+<testng-results ignored="0" total="7" passed="3" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="188" started-at="2020-03-11T06:20:15Z" finished-at="2020-03-11T06:20:16Z">
+  <suite started-at="2020-03-12T15:21:22 CST" name="Default suite" finished-at="2020-03-12T15:21:23 CST" duration-ms="632">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="188" started-at="2020-03-11T06:20:15Z" finished-at="2020-03-11T06:20:16Z">
+    <test started-at="2020-03-12T15:21:22 CST" name="Default test" finished-at="2020-03-12T15:21:23 CST" duration-ms="632">
       <class name="tests.pruebasRecorridos">
-        <test-method status="PASS" signature="filtrarRecorridoCodigo()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="filtrarRecorridoCodigo" duration-ms="101" started-at="2020-03-11T06:20:15Z" finished-at="2020-03-11T06:20:15Z">
+        <test-method signature="filtrarRecorridoCodigo()[pri:0, instance:tests.pruebasRecorridos@316bcf94]" started-at="2020-03-12T15:21:23 CST" name="filtrarRecorridoCodigo" finished-at="2020-03-12T15:21:23 CST" duration-ms="139" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [No existe o se encuentra deshabilitado] but found [R1]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [No existe o se encuentra deshabilitado] but found [R1]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at org.testng.Assert.assertEquals(Assert.java:585)
+at tests.pruebasRecorridos.filtrarRecorridoCodigo(pruebasRecorridos.java:77)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- filtrarRecorridoCodigo -->
-        <test-method status="FAIL" signature="guardaRecorrido()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="guardaRecorrido" duration-ms="12" started-at="2020-03-11T06:20:15Z" finished-at="2020-03-11T06:20:16Z">
+        <test-method signature="guardaRecorrido()[pri:0, instance:tests.pruebasRecorridos@316bcf94]" started-at="2020-03-12T15:21:23 CST" name="guardaRecorrido" finished-at="2020-03-12T15:21:23 CST" duration-ms="134" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
               <![CDATA[java.lang.AssertionError: expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertEqualsImpl(Assert.java:137)
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
 at org.testng.Assert.assertEquals(Assert.java:118)
-at org.testng.Assert.assertEquals(Assert.java:568)
-at org.testng.Assert.assertEquals(Assert.java:578)
+at org.testng.Assert.assertEquals(Assert.java:751)
+at org.testng.Assert.assertEquals(Assert.java:761)
 at tests.pruebasRecorridos.guardaRecorrido(pruebasRecorridos.java:43)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-at java.lang.reflect.Method.invoke(Unknown Source)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
@@ -56,23 +101,107 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- guardaRecorrido -->
-        <test-method status="PASS" signature="modificarRecorrido()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="modificarRecorrido" duration-ms="23" started-at="2020-03-11T06:20:16Z" finished-at="2020-03-11T06:20:16Z">
+        <test-method signature="modificarRecorrido()[pri:0, instance:tests.pruebasRecorridos@316bcf94]" started-at="2020-03-12T15:21:23 CST" name="modificarRecorrido" finished-at="2020-03-12T15:21:23 CST" duration-ms="15" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [0] but found [15]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [0] but found [15]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:839)
+at org.testng.Assert.assertEquals(Assert.java:849)
+at tests.pruebasRecorridos.modificarRecorrido(pruebasRecorridos.java:98)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- modificarRecorrido -->
-        <test-method status="PASS" signature="noGuardaRecorridoCamposEnBlanco()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="noGuardaRecorridoCamposEnBlanco" duration-ms="3" started-at="2020-03-11T06:20:16Z" finished-at="2020-03-11T06:20:16Z">
+        <test-method signature="noGuardaRecorridoCamposEnBlanco()[pri:0, instance:tests.pruebasRecorridos@316bcf94]" started-at="2020-03-12T15:21:23 CST" name="noGuardaRecorridoCamposEnBlanco" finished-at="2020-03-12T15:21:23 CST" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- noGuardaRecorridoCamposEnBlanco -->
-        <test-method status="PASS" signature="noModificaCodigoRecorrido()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="noModificaCodigoRecorrido" duration-ms="4" started-at="2020-03-11T06:20:16Z" finished-at="2020-03-11T06:20:16Z">
+        <test-method signature="noModificaCodigoRecorrido()[pri:0, instance:tests.pruebasRecorridos@316bcf94]" started-at="2020-03-12T15:21:23 CST" name="noModificaCodigoRecorrido" finished-at="2020-03-12T15:21:23 CST" duration-ms="20" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- noModificaCodigoRecorrido -->
-        <test-method status="PASS" signature="verificarElimine()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="verificarElimine" duration-ms="3" started-at="2020-03-11T06:20:16Z" finished-at="2020-03-11T06:20:16Z">
+        <test-method signature="verificarElimine()[pri:0, instance:tests.pruebasRecorridos@316bcf94]" started-at="2020-03-12T15:21:23 CST" name="verificarElimine" finished-at="2020-03-12T15:21:23 CST" duration-ms="25" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verificarElimine -->
-        <test-method status="PASS" signature="verificarNoElimineSinCodigo()[pri:0, instance:tests.pruebasRecorridos@61322f9d]" name="verificarNoElimineSinCodigo" duration-ms="3" started-at="2020-03-11T06:20:16Z" finished-at="2020-03-11T06:20:16Z">
+        <test-method signature="verificarNoElimineSinCodigo()[pri:0, instance:tests.pruebasRecorridos@316bcf94]" started-at="2020-03-12T15:21:23 CST" name="verificarNoElimineSinCodigo" finished-at="2020-03-12T15:21:23 CST" duration-ms="40" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[did not expect to find [false] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: did not expect to find [false] but found [false]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertNotEquals(Assert.java:1401)
+at org.testng.Assert.assertNotEquals(Assert.java:1406)
+at tests.pruebasRecorridos.verificarNoElimineSinCodigo(pruebasRecorridos.java:150)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verificarNoElimineSinCodigo -->

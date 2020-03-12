@@ -26,33 +26,43 @@ public class HorarioD {
      public void agregarHorario(HorarioE pHorarioE){
          this.limpiarError();
          //java.sql.Timestamp fechaSQL = new java.sql.Timestamp(pEmpleadoE.getFechaNacimiento().getTime());
+         
+         if(pHorarioE.getCodigo()!="" && pHorarioE.getNumeroBus()!="" && pHorarioE.getDescripcionHorario()!="") {
+        	 
+        	 try{
+                 String sql = "INSERT INTO horarios(codigo, numero_bus, descripcion_horario, tiempo_salida, tiempo_llegada, estado) " +
+                              "VALUES (?, ?, ?, ?, ?, ?)";
                  
-         try{
-             String sql = "INSERT INTO horarios(codigo, numero_bus, descripcion_horario, tiempo_salida, tiempo_llegada, estado) " +
-                          "VALUES (?, ?, ?, ?, ?, ?)";
-             
-             
-             Parametro[] parametros = new Parametro[6];
-             parametros[0] = new Parametro(Parametro.STRING, pHorarioE.getCodigo());
-             parametros[1] = new Parametro(Parametro.STRING, pHorarioE.getNumeroBus());
-             parametros[2] = new Parametro(Parametro.STRING, pHorarioE.getDescripcionHorario());             
-             parametros[3] = new Parametro(Parametro.TIME, pHorarioE.getTiempoSalida());
-             parametros[4] = new Parametro(Parametro.TIME, pHorarioE.getTiempoLlegada());
-             parametros[5] = new Parametro(Parametro.BOOLEAN, pHorarioE.getEstado());
-            
-             this.conexion.ejecutarSQL(sql, parametros);
-             
-             if(this.conexion.isError()){
+                 
+                 Parametro[] parametros = new Parametro[6];
+                 parametros[0] = new Parametro(Parametro.STRING, pHorarioE.getCodigo());
+                 parametros[1] = new Parametro(Parametro.STRING, pHorarioE.getNumeroBus());
+                 parametros[2] = new Parametro(Parametro.STRING, pHorarioE.getDescripcionHorario());             
+                 parametros[3] = new Parametro(Parametro.TIME, pHorarioE.getTiempoSalida());
+                 parametros[4] = new Parametro(Parametro.TIME, pHorarioE.getTiempoLlegada());
+                 parametros[5] = new Parametro(Parametro.BOOLEAN, pHorarioE.getEstado());
+                
+                 this.conexion.ejecutarSQL(sql, parametros);
+                 
+                 if(this.conexion.isError()){
+                     this.error = true;
+                     this.errorMsg = this.conexion.getErrorMsg();
+                     
+                 }
+                 
+             }catch(Exception e){
                  this.error = true;
-                 this.errorMsg = this.conexion.getErrorMsg();
+                 this.errorMsg = e.getMessage();
                  
-             }
-             
-         }catch(Exception e){
-             this.error = true;
-             this.errorMsg = e.getMessage();
-             
+             }      	 
+        	 
+         } else {
+        	 
+        	 System.out.print("Debe enviar todos los atributos\n");
+        	 
          }
+         
+         
          
          
      }
@@ -173,77 +183,97 @@ public class HorarioD {
     	 
      }//busquedaParaModificar
  
- 	public void modificarHorario(HorarioE pHorarioModificar) {
+ 	public void modificarHorario(HorarioE pHorarioModificar, String codigoOriginal) {
  		this.limpiarError();
+ 		
+ 		if(pHorarioModificar.getCodigo().equals(codigoOriginal)) {
+ 			try{
+ 	            String sql = "UPDATE horarios SET numero_bus = ? , descripcion_horario = ? ,  tiempo_salida = ? , tiempo_llegada = ? , estado = ? " +
+ 	                         "WHERE codigo = ?";
+ 	            
+ 	            Parametro[] parametros = new Parametro[6];
+ 	            parametros[0] = new Parametro(Parametro.STRING, pHorarioModificar.getNumeroBus());
+ 	            parametros[1] = new Parametro(Parametro.STRING, pHorarioModificar.getDescripcionHorario());
+ 	            parametros[2] = new Parametro(Parametro.TIME, pHorarioModificar.getTiempoSalida());
+ 	            parametros[3] = new Parametro(Parametro.TIME, pHorarioModificar.getTiempoLlegada());
+ 	            parametros[4] = new Parametro(Parametro.BOOLEAN, pHorarioModificar.getEstado());
+ 	            parametros[5] = new Parametro(Parametro.STRING, pHorarioModificar.getCodigo());
+ 	           
+ 	            
+ 	            this.conexion.ejecutarSQL(sql, parametros);
+ 	            
+ 	            if(this.conexion.isError()){
+ 	                this.error = true;
+ 	                this.errorMsg = this.conexion.getErrorMsg();
+ 	                
+ 	            }
+ 	            
+ 	        }catch(Exception e){
+ 	            this.error = true;
+ 	            this.errorMsg = e.getMessage();
+ 	            
+ 	        }
+ 		} else {
+ 			System.out.print("No puede cambiar el código del horario\n");
+ 		}
         
-        try{
-            String sql = "UPDATE horarios SET numero_bus = ? , descripcion_horario = ? ,  tiempo_salida = ? , tiempo_llegada = ? , estado = ? " +
-                         "WHERE codigo = ?";
-            
-            Parametro[] parametros = new Parametro[6];
-            parametros[0] = new Parametro(Parametro.STRING, pHorarioModificar.getNumeroBus());
-            parametros[1] = new Parametro(Parametro.STRING, pHorarioModificar.getDescripcionHorario());
-            parametros[2] = new Parametro(Parametro.TIME, pHorarioModificar.getTiempoSalida());
-            parametros[3] = new Parametro(Parametro.TIME, pHorarioModificar.getTiempoLlegada());
-            parametros[4] = new Parametro(Parametro.BOOLEAN, pHorarioModificar.getEstado());
-            parametros[5] = new Parametro(Parametro.STRING, pHorarioModificar.getCodigo());
-           
-            
-            this.conexion.ejecutarSQL(sql, parametros);
-            
-            if(this.conexion.isError()){
-                this.error = true;
-                this.errorMsg = this.conexion.getErrorMsg();
-                
-            }
-            
-        }catch(Exception e){
-            this.error = true;
-            this.errorMsg = e.getMessage();
-            
-        }
+        
  	}//modificarHorario
  
  
  	public ArrayList<HorarioE> reporteHorariosPorUnidadBus(String pNumeroBus) {
  		this.limpiarError();
         //List<MyObject> list = new ArrayList<MyObject>();
-        ArrayList<HorarioE> horariosPorUnidad = new ArrayList<HorarioE>();
-        Parametro[] parametros = new Parametro[1];
-        parametros[0] = new Parametro(Parametro.STRING, pNumeroBus);
-      
-        try{
-            ResultSet rs = this.conexion.ejecutarConsultaSQL(
-                "SELECT h.* " +
-                "FROM horarios h " +
-                "WHERE h.numero_bus = ? " +        
-                "ORDER BY h.tiempo_salida" , parametros);
-            
-            if(!this.conexion.isError()){
-                while(rs.next()){
-                    
-                	HorarioE oH = new HorarioE(
-		 					rs.getString("codigo"),
-		 					rs.getString("numero_bus"),
-		 					rs.getString("descripcion_horario"),
-		 					rs.getString("tiempo_salida"),
-		 					rs.getString("tiempo_llegada"),
-		 					rs.getBoolean("estado")
-                			);
-                	
-                	horariosPorUnidad.add(oH);   
-                }
-                rs.close();
-            }else{
-                this.error = true;
-                this.errorMsg = this.conexion.getErrorMsg();
-            }     
-            
-        }catch (Exception e) {
-            this.error = true;
-            this.errorMsg = e.getMessage();                    
-        }
-        return horariosPorUnidad;
+ 		ArrayList<HorarioE> horariosPorUnidad = new ArrayList<HorarioE>();
+ 		if(pNumeroBus!="") { 			
+ 	        Parametro[] parametros = new Parametro[1];
+ 	        parametros[0] = new Parametro(Parametro.STRING, pNumeroBus);
+ 	      
+ 	        try{
+ 	            ResultSet rs = this.conexion.ejecutarConsultaSQL(
+ 	                "SELECT h.* " +
+ 	                "FROM horarios h " +
+ 	                "WHERE h.numero_bus = ? " +        
+ 	                "ORDER BY h.tiempo_salida" , parametros);
+ 	            
+ 	            if(!this.conexion.isError()){
+ 	                while(rs.next()){
+ 	                    
+ 	                	HorarioE oH = new HorarioE(
+ 			 					rs.getString("codigo"),
+ 			 					rs.getString("numero_bus"),
+ 			 					rs.getString("descripcion_horario"),
+ 			 					rs.getString("tiempo_salida"),
+ 			 					rs.getString("tiempo_llegada"),
+ 			 					rs.getBoolean("estado")
+ 	                			);
+ 	                	
+ 	                	horariosPorUnidad.add(oH);   
+ 	                }
+ 	                rs.close();
+ 	            }else{
+ 	                this.error = true;
+ 	                this.errorMsg = this.conexion.getErrorMsg();
+ 	            }     
+ 	            
+ 	        }catch (Exception e) {
+ 	            this.error = true;
+ 	            this.errorMsg = e.getMessage();                    
+ 	        }
+ 	        
+ 	        return horariosPorUnidad;
+ 		
+ 		} else {
+ 			System.out.print("El código del socio que usted indico no existe\n"
+ 					+ horariosPorUnidad.size());
+ 			
+ 			return horariosPorUnidad;
+ 			
+ 			
+ 		}
+ 		
+ 		
+        
  		
  	}//reporteHorariosPorUnidadBus 
  	

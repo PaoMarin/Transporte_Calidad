@@ -23,7 +23,7 @@ public class HorarioE {
 	 * */
 	
 	public HorarioE() {
-	    this.codigo = "No existe o se encuentra deshabilitado";
+	    this.codigo = "";
 		this.numeroBus = "";
 		this.descripcionHorario = "";
 		this.tiempoSalida = Time.valueOf(LocalTime.parse("00:00:00", DateTimeFormatter.ofPattern("HH:mm:ss")));
@@ -99,9 +99,9 @@ public class HorarioE {
 		String datosTexto = "";
 		
 		datosTexto += "\n" +
-				"Código: " + this.codigo + "\n" +
-				"Número Bus: " + this.numeroBus + "\n" +
-				"Descripción Horario: " + this.descripcionHorario + "\n" +
+				"Cï¿½digo: " + this.codigo + "\n" +
+				"Nï¿½mero Bus: " + this.numeroBus + "\n" +
+				"Descripciï¿½n Horario: " + this.descripcionHorario + "\n" +
 				"Tiempo Salida: " + this.tiempoSalida + "\n" +
 				"Tiempo Llegada: " + this.tiempoLlegada + "\n" +
 				"Estado: " + this.estado 
